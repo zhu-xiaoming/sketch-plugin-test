@@ -12,3 +12,14 @@ document.getElementById('button').addEventListener('click', () => {
 window.setRandomNumber = (randomNumber) => {
   document.getElementById('answer').innerHTML = 'Random number from the plugin: ' + randomNumber
 }
+
+document.getElementById('img').addEventListener('click', () => {
+  console.log('img click')
+})
+document.getElementById('img').addEventListener('dragstart', (e) => {
+  e.dataTransfer.setData('', 'eliminateDropImageElement');
+})
+document.getElementById('img').addEventListener('dragend', (e) => {
+  const position = { x: e.screenX, y: e.screenY };
+  console.log(position);
+})
